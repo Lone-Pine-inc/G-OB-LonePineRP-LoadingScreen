@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div id="bg-slider"></div>
+    <video id="bg-video" autoplay muted loop playsinline></video>
 
     <div class="overlay">
         <div class="top-left-content">
@@ -30,16 +30,20 @@
     </div>
 
     <script>
-        const images = ['background/lp_loading.webm'];
+        const videos = ['background/lp_loading.webm']; 
         let currentIdx = 0;
-        const bgSlider = document.getElementById('bg-slider');
+        const bgVideo = document.getElementById('bg-video');
 
         function nextBackground() {
-            bgSlider.style.backgroundImage = `url('${images[currentIdx]}')`;
-            currentIdx = (currentIdx + 1) % images.length;
+            bgVideo.src = videos[currentIdx];
+            bgVideo.play(); 
+            currentIdx = (currentIdx + 1) % videos.length;
         }
 
-        setInterval(nextBackground, 7000);
+        if (videos.length > 1) {
+            setInterval(nextBackground, 10000);
+        }
+        
         nextBackground();
 
         function SetFilesNeeded(needed) {}
