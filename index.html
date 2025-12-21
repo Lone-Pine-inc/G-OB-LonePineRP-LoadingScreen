@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="bg-slider"></div>
+
+    <div class="overlay">
+        <div class="top-left-content">
+            <h1 class="project-name">LonePine RP</h1>
+            <h2 class="status-title">КОНЕЦ ЭПОХИ GARRY'S MOD</h2>
+        </div>
+
+        <div class="bottom-left-content">
+            <div class="description">
+                <p class="main-text">
+                    История LonePineRP в Garry's mod скоро завершиться. Мы переходим на новый этап. 
+                    Присоединяйтесь к нашему сообществу, чтобы следить за разработкой 
+                    проектов на базе S&Box.
+                </p>
+                <p class="discord-info">Наш Discord: <span class="highlight">discord.gg/h88XDzKSER</span></p>
+            </div>
+        </div>
+
+        <div class="bottom-right-content">
+            <div class="gameplay-label">*На видео геймплей игровых режимов S&box</div>
+        </div>
+    </div>
+
+    <script>
+        const images = ['background/lp_loading.gif'];
+        let currentIdx = 0;
+        const bgSlider = document.getElementById('bg-slider');
+
+        function nextBackground() {
+            bgSlider.style.backgroundImage = `url('${images[currentIdx]}')`;
+            currentIdx = (currentIdx + 1) % images.length;
+        }
+
+        setInterval(nextBackground, 7000);
+        nextBackground();
+
+        function SetFilesNeeded(needed) {}
+        function SetFilesRemaining(remaining) {}
+        function SetStatusChanged(status) {}
+        function DownloadingFile(fileName) {}
+        function SetProgress(progress) {}
+    </script>
+</body>
+</html>
